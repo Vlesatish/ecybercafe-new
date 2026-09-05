@@ -1,0 +1,27 @@
+{
+  "name": "ecybercafe",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm --prefix backend run dev",
+    "build": "npm --prefix frontend run build && npm --prefix backend run build",
+    "start": "npm --prefix backend run start",
+    "lint": "cd frontend && npm run lint && cd ../backend && npm run lint"
+  },
+  "dependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/sortablejs": "^1.15.9",
+    "canvas-confetti": "^1.9.4",
+    "firebase": "^12.17.1",
+    "firebase-admin": "^14.2.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "pdfjs-dist": "^6.3.289",
+    "sortablejs": "^1.15.7"
+  }
+}

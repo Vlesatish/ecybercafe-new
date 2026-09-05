@@ -1,0 +1,6 @@
+{
+  "name": "eCyberCafe.in - Citizen Service & ID Print Studio",
+  "description": "Official Citizen Service & Cyber Cafe portal with 1:1 eCyberCafe.in ID Card Print Studio, Auto-Print Spooler Agent, PDF crop & enhancement, dynamic UPI payments, and shop management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,38 @@
+# Hostinger Apache Configuration (.htaccess)
+# Place this file in your root web folder (public_html)
+
+# Set Max Request Body Limit to 50MB (52428800 bytes)
+LimitRequestBody 52428800
+
+# Increase Timeouts for long PDF processing requests
+<IfModule mod_env.c>
+    SetEnv CGIDEBUG 1
+</IfModule>
+
+# PHP Execution & Limit Settings (if using Hostinger PHP passenger / cPanel)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 50M
+    php_value post_max_size 50M
+    php_value memory_limit 256M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+<IfModule mod_php.c>
+    php_value upload_max_filesize 50M
+    php_value post_max_size 50M
+    php_value memory_limit 256M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Reverse Proxy to Express App on Port 3000
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow direct access to uploaded static files
+    RewriteCond %{REQUEST_URI} ^/uploads/ [NC]
+    RewriteRule ^ - [L]
+
+    # Proxy all other requests to Node app on 127.0.0.1:3000
+    RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
+</IfModule>

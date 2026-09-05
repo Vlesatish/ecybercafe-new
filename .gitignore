@@ -1,0 +1,24 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+logs/
+.env*
+!.env.example
+firebase-applet-config.json
+
+# Persistent Storage & User Uploads (Must NEVER be tracked in git or overwritten)
+uploads/
+public/uploads/
+storage/
+backups/
+database.json
+backend/database.json
+backend/storage/
+backend/uploads/
+frontend/dist/
+backend/dist/
+*.db
+*.sqlite

@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "citizenServices": {
+      "title": "Citizen Services",
+      "description": "Catalog of citizen and e-governance services",
+      "properties": {
+        "id": { "type": "string", "description": "Service identifier" },
+        "title": { "type": "string", "description": "Title of service" },
+        "category": { "type": "string", "description": "Category of service" },
+        "description": { "type": "string", "description": "Detailed description" },
+        "fee": { "type": "number", "description": "Service price" },
+        "processingTime": { "type": "string", "description": "Processing timeline" },
+        "isActive": { "type": "boolean", "description": "Active state" },
+        "fields": { "type": "array", "description": "Form fields for application" }
+      },
+      "required": ["id", "title", "fee"]
+    }
+  }
+}
